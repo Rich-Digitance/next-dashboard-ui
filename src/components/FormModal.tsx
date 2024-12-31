@@ -9,34 +9,34 @@ import { useState } from "react";
 const TeacherForm = dynamic(() => import("./forms/TeacherForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const AnnouncementForm = dynamic(() => import("./forms/StudentForm"), {
+const AnnouncementForm = dynamic(() => import("./forms/AnnouncementForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const AssignmentForm = dynamic(() => import("./forms/StudentForm"), {
+const AssignmentForm = dynamic(() => import("./forms/AssignmentForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const AttendanceForm = dynamic(() => import("./forms/StudentForm"), {
+const AttendanceForm = dynamic(() => import("./forms/AttendanceForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const ClassForm = dynamic(() => import("./forms/StudentForm"), {
+const ClassForm = dynamic(() => import("./forms/ClassForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const EventForm = dynamic(() => import("./forms/StudentForm"), {
+const EventForm = dynamic(() => import("./forms/EventForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const ExamForm = dynamic(() => import("./forms/StudentForm"), {
+const ExamForm = dynamic(() => import("./forms/ExamForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const LessonForm = dynamic(() => import("./forms/StudentForm"), {
+const LessonForm = dynamic(() => import("./forms/LessonForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const ParentForm = dynamic(() => import("./forms/StudentForm"), {
+const ParentForm = dynamic(() => import("./forms/ParentForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const ResultForm = dynamic(() => import("./forms/StudentForm"), {
+const ResultForm = dynamic(() => import("./forms/ResultForm"), {
   loading: () => <h1>Loading...</h1>,
 });
-const SubjectForm = dynamic(() => import("./forms/StudentForm"), {
+const SubjectForm = dynamic(() => import("./forms/SubjectForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 const StudentForm = dynamic(() => import("./forms/StudentForm"), {
@@ -48,16 +48,16 @@ const forms: {
 } = {
   teacher: (type, data) => <TeacherForm type={type} data={data} />,
   student: (type, data) => <StudentForm type={type} data={data} />,
-  Announcement: (type, data) => <AnnouncementForm type={type} data={data} />,
-  Assignment: (type, data) => <AssignmentForm type={type} data={data} />,
-  Attendance: (type, data) => <AttendanceForm type={type} data={data} />,
-  Class: (type, data) => <ClassForm type={type} data={data} />,
-  Event: (type, data) => <EventForm type={type} data={data} />,
-  Exam: (type, data) => <ExamForm type={type} data={data} />,
-  Lesson: (type, data) => <LessonForm type={type} data={data} />,
-  Parent: (type, data) => <ParentForm type={type} data={data} />,
-  Result: (type, data) => <ResultForm type={type} data={data} />,
-  Subject: (type, data) => <SubjectForm type={type} data={data} />,
+  announcement: (type, data) => <AnnouncementForm type={type} data={data} />,
+  assignment: (type, data) => <AssignmentForm type={type} data={data} />,
+  attendance: (type, data) => <AttendanceForm type={type} data={data} />,
+  class: (type, data) => <ClassForm type={type} data={data} />,
+  event: (type, data) => <EventForm type={type} data={data} />,
+  exam: (type, data) => <ExamForm type={type} data={data} />,
+  lesson: (type, data) => <LessonForm type={type} data={data} />,
+  parent: (type, data) => <ParentForm type={type} data={data} />,
+  result: (type, data) => <ResultForm type={type} data={data} />,
+  subject: (type, data) => <SubjectForm type={type} data={data} />,
 };
 
 const FormModal = ({
@@ -81,7 +81,7 @@ const FormModal = ({
     | "announcement";
   type: "create" | "update" | "delete";
   data?: any;
-  id?: number;
+  id?: number | string;
 }) => {
   const size = type === "create" ? "w-8 h-8" : "w-7 h-7";
 

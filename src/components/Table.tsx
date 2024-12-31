@@ -7,7 +7,7 @@ const Table = ({
   renderRow: (item: any) => React.ReactNode;
   data: any[];
 }) => {
-  console.log({ columns, renderRow, data });
+  // console.log({ columns, renderRow, data });
   return (
     <div>
       <table className="w-full mt-4">
